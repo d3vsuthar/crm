@@ -71,15 +71,15 @@ h1 { font-size: clamp(2.2rem, 5.4vw, 3.5rem); line-height: 1.12; font-weight: 40
 /* hero panel: the five-step thread */
 .glance { border-top: 2px solid var(--ink); padding-top: 18px; display: grid; gap: 16px; margin-top: 16px; }
 .glance-title { font: 500 0.82rem var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.thread { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.thread { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .thread a { height: 100%; display: grid; gap: 6px; align-content: start; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); text-decoration: none; color: var(--ink); transition: border-color .15s; }
 .thread a:hover { border-color: var(--accent); }
 .thread a:hover b { color: var(--accent); }
 .thread .step { font: 500 0.78rem var(--display); color: var(--accent); }
 .thread b { font: 500 1.08rem/1.25 var(--display); }
 .thread span:last-child { font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
-@media (max-width: 860px) { .thread { grid-template-columns: repeat(2, minmax(0, 1fr)); } .thread li:last-child { grid-column: span 2; } }
-@media (max-width: 420px) { .thread { grid-template-columns: 1fr; } .thread li:last-child { grid-column: auto; } }
+@media (max-width: 860px) { .thread { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .thread { grid-template-columns: 1fr; } }
 
 /* article + table of contents */
 .layout { display: grid; grid-template-columns: 220px minmax(0, 720px); gap: 72px; padding-block: 24px 80px; border-top: 1px solid var(--line); }
@@ -118,20 +118,24 @@ h3 { font-size: 1.25rem; line-height: 1.35; font-weight: 500; }
 /* figure panels */
 figure { margin: 12px 0 0; display: grid; gap: 12px; }
 figcaption { font: 0.88rem/1.5 var(--display); color: var(--muted); }
-.panel { border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
-.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; counter-reset: s; }
-.flow > li { position: relative; background: var(--surface); border-radius: 6px; padding: 16px 14px; display: grid; gap: 8px; align-content: start; counter-increment: s; }
-.flow > li::before { content: counter(s); width: 24px; height: 24px; border-radius: 4px; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font: 500 0.8rem var(--display); }
-.flow h3 { font-size: 0.98rem; }
-.flow ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font: 0.84rem/1.4 var(--body); color: var(--muted); }
-.flow > li:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 18px; width: 10px; text-align: center; color: var(--accent); font: 500 0.9rem var(--display); }
-.loopback { margin-top: 16px; font: 500 0.9rem/1.5 var(--display); color: var(--accent); }
+.panel { border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px 20px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); counter-reset: s; }
+.flow > li { position: relative; padding-right: 16px; display: grid; gap: 10px; align-content: start; counter-increment: s; }
+.flow > li::before { content: counter(s); position: relative; z-index: 1; width: 28px; height: 28px; border-radius: 6px; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font: 500 0.85rem var(--display); }
+.flow > li:not(:last-child)::after { content: ""; position: absolute; top: 13px; left: 36px; right: 8px; height: 2px; background: var(--line); }
+.flow h3 { font-size: 1rem; margin-top: 4px; }
+.flow ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font: 0.86rem/1.4 var(--body); color: var(--muted); }
+.loop-path { position: relative; height: 26px; margin: 18px calc(20% - 14px) 0 calc(20% + 13px); border: 2px solid var(--accent); border-top: 0; border-radius: 0 0 10px 10px; opacity: 0.55; }
+.loop-path::before { content: ""; position: absolute; top: -8px; left: -6px; border: 5px solid transparent; border-top: 0; border-bottom: 8px solid var(--accent); }
+.loop p { margin-top: 10px; text-align: center; font: 500 0.88rem/1.5 var(--display); color: var(--accent); }
 @media (max-width: 720px) {
-  .flow { grid-template-columns: 1fr; gap: 14px; }
-  .flow > li { grid-template-columns: 26px 1fr; column-gap: 12px; }
+  .flow { grid-template-columns: 1fr; }
+  .flow > li { grid-template-columns: 28px 1fr; column-gap: 14px; row-gap: 6px; padding: 0 0 22px; }
   .flow > li > * { grid-column: 2; }
-  .flow > li::before { grid-row: 1 / span 2; }
-  .flow > li:not(:last-child)::after { content: "↓"; right: auto; left: 20px; top: auto; bottom: -15px; }
+  .flow > li::before { grid-row: 1 / span 2; align-self: start; }
+  .flow > li:not(:last-child)::after { top: 32px; bottom: 4px; left: 13px; right: auto; width: 2px; height: auto; }
+  .loop-path { display: none; }
+  .loop p { text-align: left; margin-top: 0; }
 }
 
 .journeys { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -167,10 +171,6 @@ figcaption { font: 0.88rem/1.5 var(--display); color: var(--muted); }
 .ops li::before { content: ""; position: absolute; left: 0; top: 0.8em; width: 8px; height: 2px; background: var(--accent); }
 .ops b { font-weight: 500; color: var(--ink); }
 
-.found { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.found > div { border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
-.found p { font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
-@media (max-width: 600px) { .found { grid-template-columns: 1fr; } }
 
 .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .chips li { font: 0.9rem/1 var(--display); color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 8px 12px; }
@@ -211,9 +211,8 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
       <div class="byline"><span>By <b>Dev</b></span><span class="dot" aria-hidden="true"></span><span>7 min read</span></div>
 
       <nav class="glance" aria-label="Case studies at a glance">
-        <div class="glance-title">From customer data to proven outcomes</div>
+        <div class="glance-title">What this page covers</div>
         <ol class="thread">
-          <li><a href="#data"><span class="step">Data</span><b>Foundations</b><span>One record per customer</span></a></li>
           <li><a href="#intelligence"><span class="step">Intelligence</span><b>Models</b><span>Recommendations, engagement, segments</span></a></li>
           <li><a href="#orchestration"><span class="step">Decisions</span><b>Journeys</b><span>Who hears what, when, and where</span></a></li>
           <li><a href="#operations"><span class="step">Execution</span><b>Operations</b><span>Campaigns built and checked automatically</span></a></li>
@@ -231,7 +230,6 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
             <li><a href="#intelligence">Customer models</a></li>
             <li><a href="#measurement">Measuring incremental impact</a></li>
             <li><a href="#operations">Automating campaign production</a></li>
-            <li><a href="#data">The data underneath</a></li>
             <li><a href="#toolkit">Toolkit</a></li>
             <li><a href="#about">About Dev</a></li>
           </ol>
@@ -246,32 +244,32 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
           <h2>Lifecycle journeys across email, push and SMS</h2>
           <p class="dek">The rules and journeys that decide whether a customer hears from us, on which channel, and when we stop.</p>
 
-          <div class="sub"><h3>The problem</h3><p>We sell in two markets over three channels, and the campaign calendar kept getting busier. It was easy for one customer to get an email, a push and an SMS on the same day, sometimes about something they'd already bought. We were sending more every month, and engagement wasn't keeping up.</p></div>
-          <div class="sub"><h3>My role</h3><p>I designed the targeting and suppression rules, built the automated journeys, and wrote the tooling that applies those rules to every campaign we send.</p></div>
-          <div class="sub"><h3>The approach</h3><p>Every send goes through the same checks in the same order. Has the customer opted in to this channel, and can we actually reach them? Are they in the right market? Did they just buy, or have they stopped opening? Are they already in another journey? On top of the campaign calendar, a set of always-on journeys reacts to what customers do on the site and app, and we test them against holdout groups to see what they really add.</p></div>
+          <div class="sub"><h3>The problem</h3><p>We sell across several GCC markets over three channels, and the campaign calendar kept getting busier. It was easy for one customer to get an email, a push and an SMS on the same day, sometimes about something they'd already bought. We were sending more every month, and engagement wasn't keeping up.</p></div>
+          <div class="sub"><h3>My role</h3><p>I designed the targeting, built the always-on journeys, and set up how they run alongside the campaign calendar.</p></div>
+          <div class="sub"><h3>The approach</h3><p>Messaging cadence, frequency capping and entry and exit rules make sure a customer isn't sent several messages at once, or reminded about something they've already bought. On top of the campaign calendar, a set of always-on journeys reacts to what customers do on the site and app, and we test them against holdout groups to see what they really add.</p></div>
 
           <figure>
-            <div class="panel" role="img" aria-label="Orchestration flow: trigger, eligibility, suppression, channel and timing, measure, then back to eligibility">
+            <div class="panel" role="img" aria-label="Journey flow: trigger, entry rules, frequency and cadence, channel and timing, exit and measure, then back to entry">
               <ol class="flow">
                 <li><h3>Trigger</h3><ul><li>Cart or browse event</li><li>Purchase</li><li>Gone quiet</li><li>Calendar campaign</li></ul></li>
-                <li><h3>Eligibility</h3><ul><li>Opted in to the channel</li><li>Reachable device or address</li><li>Market (GCC / US)</li><li>Gender and brand fit</li></ul></li>
-                <li><h3>Hold back</h3><ul><li>Bought in the last few days</li><li>Rarely engages</li><li>Already in a higher-priority journey</li></ul></li>
+                <li><h3>Entry rules</h3><ul><li>Opted in to the channel</li><li>Reachable device or address</li><li>Right market and country</li><li>Gender and brand fit</li></ul></li>
+                <li><h3>Frequency &amp; cadence</h3><ul><li>Capped messages per channel</li><li>Minimum gap between sends</li><li>Already in a higher-priority journey</li></ul></li>
                 <li><h3>Channel &amp; timing</h3><ul><li>Email, push or SMS</li><li>English or Arabic</li><li>Send window per market</li></ul></li>
-                <li><h3>Measure</h3><ul><li>Holdout group</li><li>Fixed credit window per channel</li><li>Exit once they buy</li></ul></li>
+                <li><h3>Exit &amp; measure</h3><ul><li>Exit once they buy</li><li>Holdout group</li><li>Fixed credit window per channel</li></ul></li>
               </ol>
-              <div class="loopback">↺ What the customer does next updates their profile and scores, and feeds the next decision</div>
+              <div class="loop"><div class="loop-path" aria-hidden="true"></div><p>↺ What the customer does next updates their profile and scores, and feeds the next decision</p></div>
             </div>
-            <figcaption>Every send passes the same five checks, in the same order.</figcaption>
+            <figcaption>Cadence, frequency capping and entry and exit rules keep any one customer from getting too many messages.</figcaption>
           </figure>
 
-          <div class="result"><div class="eyebrow">Outcome</div><p>Every campaign follows one set of rules, and because the rules live in code, nobody has to remember them. More than ten always-on journeys run by themselves across the customer lifecycle, in English and Arabic, and each one can be measured the way section 03 describes.</p></div>
+          <div class="result"><div class="eyebrow">Outcome</div><p>More than ten always-on journeys run by themselves across the customer lifecycle, in English and Arabic, and each one can be measured the way section 03 describes.</p></div>
 
           <div class="sub"><h3>The always-on journeys</h3><p>Each one starts when a customer does something, and stops as soon as they buy.</p></div>
           <ul class="journeys">
             <li><span class="stage-name">New customer</span><h3>Onboarding</h3><p>New app users get a short series introducing the brand's services and the categories they're likely to shop, by market and gender.</p></li>
             <li><span class="stage-name">Browsing</span><h3>Product to bag</h3><p>Someone looks at a product but doesn't add it. They get a reminder, then a second nudge if they still haven't acted, tailored to language and to whether they have an account.</p></li>
             <li><span class="stage-name">Considering</span><h3>Wishlist to bag</h3><p>Items saved to a wishlist but never added to the bag bring the customer back to them.</p></li>
-            <li><span class="stage-name">Ready to buy</span><h3>Abandoned bag</h3><p>Items left in the bag trigger an email and a push, run separately for the GCC and the US.</p></li>
+            <li><span class="stage-name">Ready to buy</span><h3>Abandoned bag</h3><p>Items left in the bag trigger an email and a push, run separately for each market.</p></li>
             <li><span class="stage-name">Brand building</span><h3>Awareness to first purchase</h3><p>For the retailer's own brands, customers move from an introduction to the brand to a nudge toward their first purchase.</p></li>
             <li><span class="stage-name">Local moments</span><h3>Location and sale triggers</h3><p>Shoppers browsing in a city with fast delivery hear about it at that moment. During big sales, extra journeys move people from wishlist to bag and from bag to checkout.</p></li>
           </ul>
@@ -314,7 +312,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
         <section id="operations">
           <div class="eyebrow">04 · Operations</div>
           <h2>Automating campaign production</h2>
-          <p>Two markets, three channels and two languages add up to a lot of manual work for every campaign. I automated most of it. The team now spends its time on ideas and content, and we can run more campaigns without adding people.</p>
+          <p>Several markets, three channels and two languages add up to a lot of manual work for every campaign. I automated most of it. The team now spends its time on ideas and content, and we can run more campaigns without adding people.</p>
           <div class="sub"><h3>The challenge</h3><p>Each campaign used to be built by hand in the CRM tool, once per market, in English and in Arabic. Mistakes got through, like the wrong audience, a broken link or a product that had already sold out. Results were also tracked somewhere other than the plan.</p></div>
           <div class="sub"><h3>What's automated</h3>
             <ul class="ops">
@@ -330,15 +328,6 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
           <div class="sub"><h3>What's next</h3><p>I'm working on AI-assisted copy that drafts variations in the brand's tone of voice, based on past campaigns that did well. The aim is for every campaign to test its copy.</p></div>
         </section>
 
-        <!-- 5 · Foundations (short) -->
-        <section id="data">
-          <div class="eyebrow">05 · Data · In brief</div>
-          <h2>The data underneath</h2>
-          <div class="found">
-            <div><h3>One customer view</h3><p>Store and online purchases are joined into one record per customer, with spend split by channel. Our VIC and personal shopping teams work from it.</p></div>
-            <div><h3>Data and consent in sync</h3><p>Regular checks keep the website, the customer service system and the marketing platform in agreement. SMS opt-outs are synced across all of them, and incoming event data is monitored.</p></div>
-          </div>
-        </section>
 
         <section id="toolkit">
           <h2>Toolkit</h2>
