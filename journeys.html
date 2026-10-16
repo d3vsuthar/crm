@@ -9,56 +9,99 @@
 <meta property="og:description" content="Always-on CRM journeys, from onboarding to win-back, mapped step by step.">
 <!-- Keeps the page out of search results. Delete this line if you want it to be findable. -->
 <meta name="robots" content="noindex">
-<style>:root{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500;700&family=Google+Sans+Code:wght@400;500;600&display=swap">
 <style>
-/* Layout: a stack of screenshot-ready frames, one journey each, drawn like a flow-builder canvas; same palette and type as the portfolio page */
+/* Layout: matches the portfolio article. Sticky contents rail on the left, one card per journey drawn like a flow-builder canvas */
 :root {
-  --paper: #f3f4f1; --surface: #fbfbf9; --canvas: #eef0ec; --ink: #1a1c22; --muted: #5b606b; --line: #d9dbd6;
-  --edge: #8b909b; --accent: #3740b8; --accent-soft: #e4e5f6; --email: #0f7a6c; --email-soft: #dcf0ec;
-  --split: #9a6206; --split-soft: #f8ecd6; --store: #8a3a6e; --store-soft: #f5e3ee; --mark: #fff1a8; --mark-ink: #4a3d00;
-  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Serif 4", Georgia, serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --paper: #ffffff; --bg: #ffffff; --surface: #ffffff; --panel: #f8f9fa; --canvas: #f1f3f4; --ink: #202124; --text: #3c4043; --muted: #5f6368; --line: #dadce0;
+  --edge: #80868b; --accent: #1a73e8; --accent-strong: #174ea6; --accent-soft: #e8f0fe; --on-accent: #ffffff;
+  --email: #188038; --email-soft: #e6f4ea; --split: #b06000; --split-soft: #fef7e0; --store: #9334e6; --store-soft: #f3e8fd;
+  --display: "Google Sans", "Google Sans Text", Roboto, Arial, sans-serif;
+  --body: "Google Sans Text", "Google Sans", Roboto, Arial, sans-serif;
+  --mono: "Google Sans Code", ui-monospace, Menlo, monospace;
+  --bar-h: 64px;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --paper: #121318; --surface: #1a1c23; --canvas: #16181e; --ink: #e8e9ee; --muted: #9a9fac; --line: #2c2f39;
-  --edge: #6b7080; --accent: #9aa2ff; --accent-soft: #23264a; --email: #5fd1bf; --email-soft: #15332f;
-  --split: #e8b45a; --split-soft: #3a2c12; --store: #e79ccb; --store-soft: #3a1d30; --mark: #4a4210; --mark-ink: #fbe98a; color-scheme: dark } }
+  --paper: #1f1f1f; --bg: #1f1f1f; --surface: #28292c; --panel: #202124; --canvas: #1a1a1b; --ink: #e8eaed; --text: #c4c7c5; --muted: #9aa0a6; --line: #3c4043;
+  --edge: #80868b; --accent: #8ab4f8; --accent-strong: #aecbfa; --accent-soft: #263346; --on-accent: #202124;
+  --email: #81c995; --email-soft: #1e3a2a; --split: #fdd663; --split-soft: #3d3418; --store: #d7aefb; --store-soft: #352a45; color-scheme: dark } }
 :root[data-theme="dark"] {
-  --paper: #121318; --surface: #1a1c23; --canvas: #16181e; --ink: #e8e9ee; --muted: #9a9fac; --line: #2c2f39;
-  --edge: #6b7080; --accent: #9aa2ff; --accent-soft: #23264a; --email: #5fd1bf; --email-soft: #15332f;
-  --split: #e8b45a; --split-soft: #3a2c12; --store: #e79ccb; --store-soft: #3a1d30; --mark: #4a4210; --mark-ink: #fbe98a; color-scheme: dark }
+  --paper: #1f1f1f; --bg: #1f1f1f; --surface: #28292c; --panel: #202124; --canvas: #1a1a1b; --ink: #e8eaed; --text: #c4c7c5; --muted: #9aa0a6; --line: #3c4043;
+  --edge: #80868b; --accent: #8ab4f8; --accent-strong: #aecbfa; --accent-soft: #263346; --on-accent: #202124;
+  --email: #81c995; --email-soft: #1e3a2a; --split: #fdd663; --split-soft: #3d3418; --store: #d7aefb; --store-soft: #352a45; color-scheme: dark }
 
-body { background: var(--paper); color: var(--ink); font: 16px/1.55 var(--body);
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 64px; }
-.page { max-width: 1240px; margin: 0 auto; display: grid; gap: 40px; }
-h1, h2 { font-family: var(--display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
-h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 800; }
-h2 { font-size: 1.35rem; font-weight: 700; }
+*, *::before, *::after { box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 var(--body); }
+h1, h2 { font-family: var(--display); color: var(--ink); margin: 0; text-wrap: balance; }
 p { margin: 0; max-width: 72ch; }
-.tag { font: 500 0.72rem/1.2 var(--mono); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
-.note { font: 0.8rem/1.45 var(--mono); background: var(--mark); color: var(--mark-ink); padding: 8px 12px; border-radius: 4px; }
-header { display: grid; gap: 12px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1320px; margin: 0 auto; }
 
-.frame { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px 24px 18px; display: grid; gap: 14px; }
+.bar { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar .wrap { height: var(--bar-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font: 500 1.05rem var(--display); min-width: 0; }
+.brand .crumb { color: var(--muted); font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; background: var(--accent); color: var(--on-accent); font: 500 0.9rem var(--display); }
+.bar nav { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.bar nav a { font: 500 0.92rem var(--display); text-decoration: none; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
+.bar nav a:hover { background: var(--panel); color: var(--ink); }
+.bar nav .btn { border: 1px solid var(--line); color: var(--accent); padding: 8px 18px; }
+.bar nav .btn:hover { background: var(--accent-soft); }
+@media (max-width: 560px) { .bar nav .hide-sm, .brand .crumb { display: none; } }
+
+.hero { padding-block: 48px 36px; display: grid; gap: 18px; }
+.back { font: 500 0.9rem var(--display); text-decoration: none; }
+.eyebrow { font: 500 0.88rem/1.3 var(--display); color: var(--accent); }
+h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.15; font-weight: 400; letter-spacing: -0.015em; }
+.dek { font-size: 1.15rem; color: var(--muted); max-width: 52rem; }
+h2 { font-size: 1.4rem; line-height: 1.3; font-weight: 500; }
+
+.layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; padding-block: 0 80px; border-top: 1px solid var(--line); }
+.toc-rail { position: sticky; top: calc(var(--bar-h) + 32px); align-self: start; padding-top: 32px; }
+.toc summary { font: 500 0.82rem var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); list-style: none; padding-bottom: 12px; }
+.toc summary::-webkit-details-marker { display: none; }
+.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); display: grid; }
+.toc a { display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 3px solid transparent; font: 0.93rem/1.35 var(--display); color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+.toc a[aria-current="true"] { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+@media (min-width: 961px) { .toc summary { pointer-events: none; } }
+@media (max-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 0; }
+  .toc-rail { position: static; padding-top: 0; }
+  .toc { border: 1px solid var(--line); border-radius: 16px; padding: 4px 18px; }
+  .toc summary { padding-block: 14px; cursor: pointer; display: flex; justify-content: space-between; }
+  .toc summary::after { content: "+"; font-size: 1.2rem; line-height: 1; }
+  .toc[open] summary::after { content: "–"; }
+  .toc ol { margin-bottom: 14px; }
+}
+
+#frames { display: grid; gap: 32px; padding-top: 32px; min-width: 0; }
+.frame { background: var(--panel); border-radius: 20px; padding: clamp(16px, 3vw, 24px); display: grid; gap: 16px; min-width: 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
 .frame-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 24px; }
-.frame-head > div { display: grid; gap: 4px; min-width: 0; }
+.frame-head > div:first-child { display: grid; gap: 4px; min-width: 0; }
 .frame-head p { color: var(--muted); font-size: 0.95rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.04em; padding: 6px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.chip { font: 500 0.8rem/1 var(--display); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); line-height: 1.3; max-width: 100%; }
 .chip.goal { border-color: transparent; background: var(--accent-soft); color: var(--accent); }
-.chip.blue { border-color: transparent; background: var(--ink); color: var(--paper); }
-.canvas { overflow-x: auto; background: var(--canvas); border-radius: 8px;
+.chip.blue { border-color: transparent; background: var(--accent); color: var(--on-accent); }
+.canvas { min-width: 0; overflow-x: auto; background: var(--canvas); border-radius: 14px;
   background-image: radial-gradient(var(--line) 1px, transparent 1px); background-size: 18px 18px; }
 .canvas svg { display: block; margin: 0 auto; width: 100%; height: auto; min-width: 760px; }
-.foot { font-size: 0.88rem; color: var(--muted); }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font: 0.76rem var(--mono); color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.foot { font-size: 0.9rem; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 0.86rem var(--display); color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+
+footer { border-top: 1px solid var(--line); background: var(--panel); }
+footer .wrap { padding-block: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font: 0.9rem var(--display); color: var(--muted); }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
 
 /* svg parts */
 .edge { fill: none; stroke: var(--edge); stroke-width: 1.6; }
@@ -118,24 +161,53 @@ header { display: grid; gap: 12px; }
 .b-store { fill: var(--store-soft); color: var(--store); }
 #capstone .canvas svg { min-width: 900px; }
 </style>
+</head>
+<body>
 
-<div class="page">
-  <header>
-    <div class="tag"><a href="index.html" style="color:inherit">← Selected CRM work</a> · Journey maps</div>
-    <h1>Always-on CRM journeys</h1>
-    <p>The first map is a blueprint of one connected customer lifecycle. The rest are the individual always-on journeys it's built from, simplified for clarity.</p>
-    <div class="legend">
-      <span><i class="sw" style="background:var(--accent)"></i>Trigger</span>
-      <span><i class="sw" style="background:var(--split-soft);border:1px solid var(--split)"></i>Decision</span>
-      <span><i class="sw" style="background:var(--accent-soft)"></i>Push</span>
-      <span><i class="sw" style="background:var(--email-soft)"></i>Email</span>
-      <span><i class="sw" style="background:var(--store-soft)"></i>Store / personal shopper</span>
-      <span><i class="sw" style="border:1px dashed var(--edge)"></i>Wait</span>
-      <span><i class="sw" style="background:var(--ink)"></i>Goal</span>
+<header class="bar gutter">
+  <div class="wrap">
+    <a class="brand" href="https://devsuthar.co.in"><span class="avatar" aria-hidden="true">D</span>Dev <span class="crumb">/ CRM work / Journey maps</span></a>
+    <nav aria-label="Site">
+      <a class="hide-sm" href="index.html">Case study</a>
+      <a class="hide-sm" href="https://devsuthar.co.in">devsuthar.co.in</a>
+      <a class="btn" href="mailto:info@devsuthar.co.in">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="gutter">
+  <div class="wrap">
+    <div class="hero" id="top">
+      <a class="back" href="index.html">← Selected CRM work</a>
+      <div class="eyebrow">Journey maps</div>
+      <h1>Always-on CRM journeys</h1>
+      <p class="dek">The first map is a blueprint of one connected customer lifecycle. The rest are the individual always-on journeys it's built from, simplified for clarity.</p>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--accent)"></i>Trigger</span>
+        <span><i class="sw" style="background:var(--split-soft);border:1px solid var(--split)"></i>Decision</span>
+        <span><i class="sw" style="background:var(--accent-soft)"></i>Push</span>
+        <span><i class="sw" style="background:var(--email-soft)"></i>Email</span>
+        <span><i class="sw" style="background:var(--store-soft)"></i>Store / personal shopper</span>
+        <span><i class="sw" style="border:1px dashed var(--edge)"></i>Wait</span>
+        <span><i class="sw" style="background:var(--ink)"></i>Goal</span>
+      </div>
     </div>
-  </header>
-  <div id="frames" class="page" style="gap:40px"></div>
-</div>
+
+    <div class="layout">
+      <aside class="toc-rail">
+        <details class="toc" id="toc"><summary>On this page</summary><ol></ol></details>
+      </aside>
+      <div id="frames"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="gutter">
+  <div class="wrap">
+    <span>© Dev · <a href="https://devsuthar.co.in">devsuthar.co.in</a></span>
+    <span class="links"><a href="index.html">Case study</a><a href="mailto:info@devsuthar.co.in">Contact</a><a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
 
 <script>
 const SIZE = { trigger:{w:164,h:64}, split:{w:160,h:66}, msg:{w:164,h:74}, wait:{w:66,h:38}, hold:{w:164,h:56},
@@ -440,6 +512,28 @@ DIAGRAMS.forEach(d => {
   if (d.foot) { const p = document.createElement("p"); p.className = "foot"; p.textContent = d.foot; f.appendChild(p); }
   host.appendChild(f);
 });
+// On narrow screens, open each wide diagram scrolled to its centre, where the main flow runs
+document.querySelectorAll(".canvas").forEach(c => { c.scrollLeft = (c.scrollWidth - c.clientWidth) / 2; });
+
+// Table of contents built from the diagrams: open on wide screens, collapsible on narrow ones, tracks the frame in view
+(() => {
+  const toc = document.getElementById("toc"), list = toc.querySelector("ol");
+  DIAGRAMS.forEach(d => { const li = document.createElement("li"), a = document.createElement("a"); a.href = "#" + d.id; a.textContent = d.title; li.appendChild(a); list.appendChild(li); });
+  const wide = matchMedia("(min-width: 961px)");
+  const sync = () => { toc.open = wide.matches; };
+  sync(); wide.addEventListener("change", sync);
+  const links = [...list.querySelectorAll("a")];
+  links.forEach(a => a.addEventListener("click", () => { if (!wide.matches) toc.open = false; }));
+  const frames = DIAGRAMS.map(d => document.getElementById(d.id));
+  const update = () => {
+    let current = 0;
+    frames.forEach((f, i) => { if (f.getBoundingClientRect().top <= innerHeight * 0.3) current = i; });
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = frames.length - 1;
+    links.forEach((a, i) => a.setAttribute("aria-current", i === current ? "true" : "false"));
+  };
+  addEventListener("scroll", update, { passive: true }); addEventListener("resize", update); update();
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+})();
 </script>
 </body>
 </html>

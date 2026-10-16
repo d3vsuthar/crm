@@ -1,12 +1,13 @@
 # CRM portfolio pages
 
-Two static pages with no build step. Fonts load from Google Fonts. Everything else is inline.
+Two static pages with no build step, styled as a Think with Google–style article (Google Sans, sticky table of contents on the left). Fonts load from Google Fonts. Everything else is inline.
+
+Live at https://d3vsuthar.github.io/crm-port/
 
 - `index.html`: Selected CRM work, the main page
 - `journeys.html`: Journey maps, including the lifecycle blueprint (linked from index)
 
 ## Before publishing
-- Add your name, contact details and a link to your main site (see the TODO comment in `index.html` footer).
 - Both pages carry `<meta name="robots" content="noindex">` so they stay out of search results. Delete it if you want them indexed.
 
 ## Deploy
