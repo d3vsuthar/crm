@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500;700&family=Google+Sans+Code:wght@400;500;600&display=swap">
 <style>
-/* Layout: matches the portfolio article. Sticky contents rail on the left, one hairline-bordered frame per journey drawn like a flow-builder canvas */
+/* Layout: matches the portfolio article. One full-width, hairline-bordered frame holding the lifecycle blueprint, drawn like a flow-builder canvas */
 :root {
   --paper: #ffffff; --bg: #ffffff; --surface: #ffffff; --panel: #f8f9fa; --canvas: #f1f3f4; --ink: #202124; --text: #3c4043; --muted: #5f6368; --line: #dadce0;
   --edge: #80868b; --accent: #0f766e; --accent-strong: #115e59; --accent-soft: #e7f3f1; --on-accent: #ffffff;
@@ -62,26 +62,8 @@ h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.15; font-weight: 400; l
 .dek { font-size: 1.15rem; color: var(--muted); max-width: 52rem; }
 h2 { font-size: 1.4rem; line-height: 1.3; font-weight: 500; }
 
-.layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; padding-block: 0 80px; border-top: 1px solid var(--line); }
-.toc-rail { position: sticky; top: calc(var(--bar-h) + 32px); align-self: start; padding-top: 32px; }
-.toc summary { font: 500 0.82rem var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); list-style: none; padding-bottom: 12px; }
-.toc summary::-webkit-details-marker { display: none; }
-.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); display: grid; }
-.toc a { display: block; padding: 8px 0 8px 16px; margin-left: -1px; border-left: 3px solid transparent; font: 0.93rem/1.35 var(--display); color: var(--muted); text-decoration: none; }
-.toc a:hover { color: var(--ink); }
-.toc a[aria-current="true"] { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
-@media (min-width: 961px) { .toc summary { pointer-events: none; } }
-@media (max-width: 960px) {
-  .layout { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 0; }
-  .toc-rail { position: static; padding-top: 0; }
-  .toc { border: 1px solid var(--line); border-radius: 6px; padding: 4px 18px; }
-  .toc summary { padding-block: 14px; cursor: pointer; display: flex; justify-content: space-between; }
-  .toc summary::after { content: "+"; font-size: 1.2rem; line-height: 1; }
-  .toc[open] summary::after { content: "–"; }
-  .toc ol { margin-bottom: 14px; }
-}
-
-#frames { display: grid; gap: 32px; padding-top: 32px; min-width: 0; }
+.layout { border-top: 1px solid var(--line); padding-block: 32px 80px; }
+#frames { display: grid; gap: 32px; min-width: 0; }
 .frame { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: clamp(16px, 3vw, 24px); display: grid; gap: 16px; min-width: 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
 .frame-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 24px; }
 .frame-head > div:first-child { display: grid; gap: 4px; min-width: 0; }
@@ -105,32 +87,7 @@ footer a:hover { color: var(--accent); }
 footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
 
 /* svg parts */
-.edge { fill: none; stroke: var(--edge); stroke-width: 1.6; }
 .arrow { fill: var(--edge); }
-.elabel { font: 600 11px var(--mono); fill: var(--split); }
-.n-trigger { fill: var(--accent); }
-.t-trigger, .t-goal { fill: var(--paper); }
-.t-trigger-sub, .t-goal-sub { fill: var(--paper); opacity: 0.85; }
-.n-split { fill: var(--split-soft); stroke: var(--split); stroke-width: 1.4; }
-.t-split { fill: var(--split); }
-.n-msg { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; }
-.n-wait { fill: var(--canvas); stroke: var(--edge); stroke-width: 1.2; stroke-dasharray: 4 3; }
-.t-wait { fill: var(--muted); }
-.n-hold { fill: var(--canvas); stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 2 3; }
-.n-goal { fill: var(--ink); }
-.n-stage { fill: var(--ink); }
-.t-stage { fill: var(--paper); }
-.n-journey { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; }
-.n-band { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1; stroke-dasharray: 5 4; }
-.t-band { fill: var(--accent); }
-.c-push { fill: var(--accent-soft); } .ct-push { fill: var(--accent); }
-.c-email { fill: var(--email-soft); } .ct-email { fill: var(--email); }
-.c-store { fill: var(--store-soft); } .ct-store { fill: var(--store); }
-.lbl { font: 700 13px var(--display); fill: var(--ink); }
-.sub { font: 400 11.5px var(--body); fill: var(--muted); }
-.lane { font: 600 10.5px var(--mono); letter-spacing: 0.1em; fill: var(--muted); }
-.chiptxt { font: 600 9.5px var(--mono); letter-spacing: 0.06em; }
-.kicker { font: 600 9.5px var(--mono); letter-spacing: 0.08em; }
 
 /* workflow-builder look (capstone) */
 .b-card { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
@@ -182,7 +139,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
       <a class="back" href="index.html">← Selected CRM work</a>
       <div class="eyebrow">Journey maps</div>
       <h1>Always-on CRM journeys</h1>
-      <p class="dek">The first map is a blueprint of one connected customer lifecycle. The rest are the individual always-on journeys it's built from, simplified for clarity.</p>
+      <p class="dek">How the always-on journeys connect into one customer lifecycle, simplified for clarity.</p>
       <div class="legend">
         <span><i class="sw" style="background:var(--accent)"></i>Trigger</span>
         <span><i class="sw" style="background:var(--split-soft);border:1px solid var(--split)"></i>Decision</span>
@@ -195,9 +152,6 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
     </div>
 
     <div class="layout">
-      <aside class="toc-rail">
-        <details class="toc" id="toc"><summary>On this page</summary><ol></ol></details>
-      </aside>
       <div id="frames"></div>
     </div>
   </div>
@@ -211,12 +165,8 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
 </footer>
 
 <script>
-const SIZE = { trigger:{w:164,h:64}, split:{w:160,h:66}, msg:{w:164,h:74}, wait:{w:66,h:38}, hold:{w:164,h:56},
-  goal:{w:140,h:58}, stage:{w:156,h:48}, journey:{w:156,h:64} };
-const PERSONALISE = "market · gender ·|language · channel";
-
 const DIAGRAMS = [
-  { id: "capstone", builder: true, title: "One customer lifecycle, start to finish", sub: "How the individual journeys connect into a single programme, from the first visit to loyal client, and back again if they drift away.",
+  { id: "capstone", builder: true, title: "One customer lifecycle, start to finish", sub: "From first visit to repeat purchase, and back again if a customer goes quiet.",
     chips: [{t:"Blueprint", blue:true}, {t:"Decisions: market · gender · language · channel · value"}],
     foot: "↺ Customers who come back through a win-back message rejoin the browsing journeys. Any new purchase starts the post-purchase steps again.",
     nodes: [
@@ -247,175 +197,12 @@ const DIAGRAMS = [
       ["ms","r1","Browses"],["ms","r2","Saves"],["ms","r3","Adds to bag"],["ms","wq","Nothing yet"],["wq","rc"],
       ["r1","g",null,1],["r2","g",null,1],["r3","g",null,1],["rc","g",null,1],
       ["g","pp"],["pp","wt"],["wt","tf"],["tf","vp","Yes"],["tf","rp","No"],["vp","ps"],["ps","gq",null,1],["rp","gq",null,1],
-      ["gq","wb","Yes"],["gq","x2","No"],["wb","lp"]] },
-
-  { id: "lifecycle", title: "Journeys across the customer lifecycle", sub: "Each journey starts from something the customer does on the site or app.",
-    chips: [{t:"Email + push"}, {t:"English + Arabic"}], rowH: 104,
-    nodes: [
-      {id:"s1", t:"stage", c:0, r:0, l:"New customer"}, {id:"s2", t:"stage", c:1, r:0, l:"Browsing"},
-      {id:"s3", t:"stage", c:2, r:0, l:"Considering"}, {id:"s4", t:"stage", c:3, r:0, l:"Ready to buy"},
-      {id:"s5", t:"stage", c:4, r:0, l:"Brand building"},
-      {id:"j1", t:"journey", c:0, r:1, l:"Onboarding", s:"Welcome, services,|categories for you"},
-      {id:"j2", t:"journey", c:1, r:1, l:"Product to bag", s:"Viewed, didn't add"},
-      {id:"j3", t:"journey", c:2, r:1, l:"Wishlist to bag", s:"Saved, didn't add"},
-      {id:"j4", t:"journey", c:3, r:1, l:"Abandoned bag", s:"In the bag,|no checkout"},
-      {id:"j5", t:"journey", c:4, r:1, l:"Own brands", s:"Awareness, then|first purchase"},
-      {id:"b1", t:"band", c:1, c2:3, r:2, l:"Moments: fast-delivery cities · sale periods (wishlist → bag → checkout)"}
-    ],
-    edges: [["s1","s2"],["s2","s3"],["s3","s4"],["s4","s5"],["s1","j1"],["s2","j2"],["s3","j3"],["s4","j4"],["s5","j5"]] },
-
-  { id: "ptc", title: "Product to bag", sub: "For people who look at a product but don't add it. Reminders build up over several touches, then switch to email.",
-    chips: [{t:"Goal: adds to bag, then buys", goal:true}],
-    nodes: [
-      {id:"t", t:"trigger", c:0, r:0, l:"Viewed a product", s:"Didn't add it to the bag"},
-      {id:"sp", t:"split", c:1, r:0, l:"Personalise", s:PERSONALISE},
-      {id:"p1", t:"msg", ch:"push", c:2, r:0, l:"Reminder 1", s:"The product they viewed"},
-      {id:"w1", t:"wait", c:3, r:0},
-      {id:"p2", t:"msg", ch:"push", c:4, r:0, l:"Reminder 2", s:"Second nudge"},
-      {id:"w2", t:"wait", c:5, r:0},
-      {id:"p3", t:"msg", ch:"push", c:6, r:0, l:"Reminder 3", s:"Final push"},
-      {id:"e1", t:"msg", ch:"email", c:7, r:0, l:"Email follow-up", s:"Product and similar picks"}
-    ],
-    edges: [["t","sp"],["sp","p1"],["p1","w1"],["w1","p2"],["p2","w2"],["w2","p3"],["p3","e1"]] },
-
-  { id: "wtc", title: "Wishlist to bag", sub: "Brings people back to items they saved but never added to the bag.",
-    chips: [{t:"Goal: adds to bag", goal:true}],
-    nodes: [
-      {id:"t", t:"trigger", c:0, r:0, l:"Saved to wishlist", s:"Not added to the bag"},
-      {id:"sp", t:"split", c:1, r:0, l:"Personalise", s:PERSONALISE},
-      {id:"p1", t:"msg", ch:"push", c:2, r:0, l:"Reminder 1", s:"Your saved item"},
-      {id:"w1", t:"wait", c:3, r:0},
-      {id:"p2", t:"msg", ch:"push", c:4, r:0, l:"Reminder 2", s:"Still in your wishlist"},
-      {id:"w2", t:"wait", c:5, r:0},
-      {id:"p3", t:"msg", ch:"push", c:6, r:0, l:"Reminder 3", s:"Last reminder"},
-      {id:"e1", t:"msg", ch:"email", c:7, r:0, l:"Email", s:"All saved items"}
-    ],
-    edges: [["t","sp"],["sp","p1"],["p1","w1"],["w1","p2"],["p2","w2"],["w2","p3"],["p3","e1"]] },
-
-  { id: "cart", title: "Abandoned bag", sub: "Items left in the bag trigger a reminder by push and by email.",
-    chips: [{t:"Goal: starts checkout", goal:true}],
-    nodes: [
-      {id:"t", t:"trigger", c:0, r:0.5, l:"Left items in the bag", s:"Didn't check out"},
-      {id:"sp", t:"split", c:1, r:0.5, l:"Personalise", s:PERSONALISE},
-      {id:"pg", t:"msg", ch:"push", c:2, r:0, l:"Bag reminder", s:"What's waiting in the bag"},
-      {id:"eg", t:"msg", ch:"email", c:2, r:1, l:"Bag email", s:"Items, sizes, delivery"}
-    ],
-    edges: [["t","sp"],["sp","pg"],["sp","eg"]] },
-
-  { id: "onb", title: "Onboarding", sub: "New app users get a welcome, then reasons to shop with us, then the categories they're likely to want.",
-    chips: [{t:"Goal: first purchase", goal:true}],
-    nodes: [
-      {id:"t", t:"trigger", c:0, r:0, l:"New app user", s:"First open of the app"},
-      {id:"sp", t:"split", c:1, r:0, l:"Personalise", s:"market · gender"},
-      {id:"wg", t:"msg", ch:"push", c:2, r:0, l:"Welcome", s:"Women's or men's"},
-      {id:"w1", t:"wait", c:3, r:0},
-      {id:"usp", t:"msg", ch:"push", c:4, r:0, l:"Why shop with us", s:"Services in their market"},
-      {id:"w2", t:"wait", c:5, r:0},
-      {id:"cat", t:"msg", ch:"push", c:6, r:0, l:"Categories for you", s:"Based on what they like"}
-    ],
-    edges: [["t","sp"],["sp","wg"],["wg","w1"],["w1","usp"],["usp","w2"],["w2","cat"]] }
+      ["gq","wb","Yes"],["gq","x2","No"],["wb","lp"]] }
 ];
 
 const NS = "http://www.w3.org/2000/svg";
 function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
 function text(parent, x, y, str, cls, anchor = "middle") { const t = el("text", { x, y, class: cls, "text-anchor": anchor }, parent); t.textContent = str; return t; }
-function lines(parent, cx, y, s, cls, lh = 14, anchor = "middle") { (s || "").split("|").forEach((ln, i) => text(parent, cx, y + i * lh, ln, cls, anchor)); }
-
-function render(d) {
-  const pad = 28, rowH = d.rowH || 112, gapAfter = c => (d.gaps && d.gaps[c]) || 34;
-  const placed = d.nodes.filter(n => n.t !== "lane");
-  const colW = {};
-  placed.forEach(n => { if (n.t !== "band") colW[n.c] = Math.max(colW[n.c] || 0, SIZE[n.t].w); });
-  const colX = {}; let x = pad;
-  Object.keys(colW).map(Number).sort((a, b) => a - b).forEach(c => { colX[c] = x; x += colW[c] + gapAfter(c); });
-  const lastCol = Math.max(...Object.keys(colW).map(Number));
-  const W = x - gapAfter(lastCol) + pad;
-  const maxR = Math.max(...placed.map(n => n.r));
-  const H = pad * 2 + maxR * rowH + 80;
-
-  const pos = {};
-  placed.forEach(n => {
-    let w, h;
-    if (n.t === "band") { w = colX[n.c2] + colW[n.c2] - colX[n.c]; h = 44; }
-    else ({ w, h } = SIZE[n.t]);
-    const cy = pad + 40 + n.r * rowH;
-    const left = n.t === "band" ? colX[n.c] : colX[n.c] + (colW[n.c] - w) / 2;
-    pos[n.id] = { x: left, y: cy - h / 2, w, h, cx: left + w / 2, cy };
-  });
-
-  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": d.title });
-  svg.style.maxWidth = W + "px";
-  const defs = el("defs", {}, svg);
-  const m = el("marker", { id: `ar-${d.id}`, viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" }, defs);
-  el("path", { d: "M0,0 L10,5 L0,10 z", class: "arrow" }, m);
-
-  d.nodes.filter(n => n.t === "lane").forEach(n => text(svg, W - pad, pad + 40 + n.r * rowH, n.l, "lane", "end"));
-
-  const eg = el("g", {}, svg);
-  d.edges.forEach(([a, b, label]) => {
-    const A = pos[a], B = pos[b]; let p;
-    if (B.x >= A.x + A.w - 1) {
-      const x1 = A.x + A.w, y1 = A.cy, x2 = B.x - 2, y2 = B.cy, mid = x1 + Math.min(18, (x2 - x1) / 2);
-      p = Math.abs(y1 - y2) < 1 ? `M${x1},${y1} H${x2}` : `M${x1},${y1} H${mid} V${y2} H${x2}`;
-      if (label) text(eg, Math.abs(y1 - y2) < 1 ? x1 + 8 : mid + 6, y2 - 7, label, "elabel", "start");
-    } else {
-      const y1 = A.y + A.h, y2 = B.y - 2;
-      if (Math.abs(A.cx - B.cx) < 1) p = `M${A.cx},${y1} V${y2}`;
-      else { const midY = (y1 + y2) / 2; p = `M${A.cx},${y1} V${midY} H${B.cx} V${y2}`; }
-      if (label) text(eg, A.cx + 7, (y1 + y2) / 2 + 4, label, "elabel", "start");
-    }
-    el("path", { d: p, class: "edge", "marker-end": `url(#ar-${d.id})` }, eg);
-  });
-
-  placed.forEach(n => {
-    const P = pos[n.id], g = el("g", {}, svg);
-    if (n.t === "trigger") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: P.h / 2, class: "n-trigger" }, g);
-      text(g, P.cx, P.y + 18, "WHEN", "kicker t-trigger-sub");
-      text(g, P.cx, P.y + 35, n.l, "lbl t-trigger");
-      lines(g, P.cx, P.y + 51, n.s, "sub t-trigger-sub");
-    } else if (n.t === "split") {
-      const k = 16, { x, y, w, h } = P;
-      el("polygon", { points: `${x + k},${y} ${x + w - k},${y} ${x + w},${y + h / 2} ${x + w - k},${y + h} ${x + k},${y + h} ${x},${y + h / 2}`, class: "n-split" }, g);
-      if (n.two) { text(g, P.cx, P.cy - 3, n.l, "lbl t-split"); text(g, P.cx, P.cy + 13, n.s, "lbl t-split"); }
-      else if (n.s) {
-        const sl = n.s.split("|");
-        text(g, P.cx, P.cy - (sl.length > 1 ? 12 : 4), n.l, "lbl t-split");
-        lines(g, P.cx, P.cy + (sl.length > 1 ? 4 : 12), n.s, "sub", 13);
-      } else text(g, P.cx, P.cy + 4, n.l, "lbl t-split");
-    } else if (n.t === "wait") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: P.h / 2, class: "n-wait" }, g);
-      text(g, P.cx, P.cy + 4, "Wait", "chiptxt t-wait");
-    } else if (n.t === "hold") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: 9, class: "n-hold" }, g);
-      text(g, P.cx, P.y + 24, n.l, "lbl");
-      text(g, P.cx, P.y + 41, n.s, "sub");
-    } else if (n.t === "goal") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: P.h / 2, class: "n-goal" }, g);
-      text(g, P.cx, P.y + 22, "GOAL", "kicker t-goal-sub");
-      text(g, P.cx, P.y + 39, n.l, "lbl t-goal");
-    } else if (n.t === "msg") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: 9, class: "n-msg" }, g);
-      const label = { email: "EMAIL", push: "PUSH", store: "STORE" }[n.ch], cw = label.length * 7 + 14;
-      el("rect", { x: P.x + 10, y: P.y + 10, width: cw, height: 17, rx: 4, class: `c-${n.ch}` }, g);
-      text(g, P.x + 10 + cw / 2, P.y + 22, label, `chiptxt ct-${n.ch}`);
-      text(g, P.x + 12, P.y + 46, n.l, "lbl", "start");
-      text(g, P.x + 12, P.y + 62, n.s || "", "sub", "start");
-    } else if (n.t === "stage") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: P.h / 2, class: "n-stage" }, g);
-      text(g, P.cx, P.cy + 4.5, n.l, "lbl t-stage");
-    } else if (n.t === "journey") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: 9, class: "n-journey" }, g);
-      text(g, P.cx, P.y + 24, n.l, "lbl");
-      lines(g, P.cx, P.y + 41, n.s, "sub");
-    } else if (n.t === "band") {
-      el("rect", { x: P.x, y: P.y, width: P.w, height: P.h, rx: 9, class: "n-band" }, g);
-      text(g, P.cx, P.cy + 4.5, n.l, "lbl t-band");
-    }
-  });
-  return svg;
-}
-
 
 /* ---- workflow-builder renderer (capstone) ---- */
 const KIND = {
@@ -509,32 +296,13 @@ DIAGRAMS.forEach(d => {
   f.querySelector("p").textContent = d.sub;
   const chips = f.querySelector(".chips");
   d.chips.forEach(c => { const s = document.createElement("span"); s.className = "chip" + (c.goal ? " goal" : "") + (c.blue ? " blue" : ""); s.textContent = c.t; chips.appendChild(s); });
-  f.querySelector(".canvas").appendChild(d.builder ? renderBuilder(d) : render(d));
+  f.querySelector(".canvas").appendChild(renderBuilder(d));
   if (d.foot) { const p = document.createElement("p"); p.className = "foot"; p.textContent = d.foot; f.appendChild(p); }
   host.appendChild(f);
 });
 // On narrow screens, open each wide diagram scrolled to its centre, where the main flow runs
 document.querySelectorAll(".canvas").forEach(c => { c.scrollLeft = (c.scrollWidth - c.clientWidth) / 2; });
 
-// Table of contents built from the diagrams: open on wide screens, collapsible on narrow ones, tracks the frame in view
-(() => {
-  const toc = document.getElementById("toc"), list = toc.querySelector("ol");
-  DIAGRAMS.forEach(d => { const li = document.createElement("li"), a = document.createElement("a"); a.href = "#" + d.id; a.textContent = d.title; li.appendChild(a); list.appendChild(li); });
-  const wide = matchMedia("(min-width: 961px)");
-  const sync = () => { toc.open = wide.matches; };
-  sync(); wide.addEventListener("change", sync);
-  const links = [...list.querySelectorAll("a")];
-  links.forEach(a => a.addEventListener("click", () => { if (!wide.matches) toc.open = false; }));
-  const frames = DIAGRAMS.map(d => document.getElementById(d.id));
-  const update = () => {
-    let current = 0;
-    frames.forEach((f, i) => { if (f.getBoundingClientRect().top <= innerHeight * 0.3) current = i; });
-    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = frames.length - 1;
-    links.forEach((a, i) => a.setAttribute("aria-current", i === current ? "true" : "false"));
-  };
-  addEventListener("scroll", update, { passive: true }); addEventListener("resize", update); update();
-  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
-})();
 </script>
 </body>
 </html>
