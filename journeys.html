@@ -178,7 +178,7 @@ const DIAGRAMS = [
       {id:"ms",  k:"split",   c:1.5, l:4,  type:"Multi-split", title:"What do they do next?", sub:"Based on their last action"},
       {id:"r1",  k:"push",    c:0,   l:5,  type:"Push series", title:"Product reminders", sub:"The product they viewed"},
       {id:"r2",  k:"push",    c:1,   l:5,  type:"Push series", title:"Wishlist reminders", sub:"Items they saved"},
-      {id:"r3",  k:"email",   c:2,   l:5,  type:"Email + push", title:"Bag reminders", sub:"Items left in the bag"},
+      {id:"r3",  k:"email",   c:2,   l:5,  type:"Email + push", title:"Cart reminders", sub:"Items left in the cart"},
       {id:"wq",  k:"wait",    c:3,   l:5,  type:"Wait", title:"Give it time", sub:"No activity yet"},
       {id:"rc",  k:"email",   c:3,   l:6,  type:"Email", title:"Recommendations", sub:"Brands they'll likely love"},
       {id:"g",   k:"goal",    c:1.5, l:7,  w:280, type:"Conversion goal", title:"First purchase", sub:"Buyers move on to the next stage"},
@@ -194,7 +194,7 @@ const DIAGRAMS = [
       {id:"x2",  k:"exit",    c:2.5, l:14, title:"Stays in programme"}
     ],
     edges: [["t","pe"],["pe","on"],["on","hs"],["hs","ho","Holdout"],["hs","ms","Everyone else"],
-      ["ms","r1","Browses"],["ms","r2","Saves"],["ms","r3","Adds to bag"],["ms","wq","Nothing yet"],["wq","rc"],
+      ["ms","r1","Browses"],["ms","r2","Saves"],["ms","r3","Adds to cart"],["ms","wq","Nothing yet"],["wq","rc"],
       ["r1","g",null,1],["r2","g",null,1],["r3","g",null,1],["rc","g",null,1],
       ["g","pp"],["pp","wt"],["wt","tf"],["tf","vp","Yes"],["tf","rp","No"],["vp","ps"],["ps","gq",null,1],["rp","gq",null,1],
       ["gq","wb","Yes"],["gq","x2","No"],["wb","lp"]] }
