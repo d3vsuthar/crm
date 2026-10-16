@@ -194,7 +194,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
       <div class="eyebrow">Case study · CRM &amp; customer data</div>
       <h1>Selected CRM and customer data work</h1>
       <p class="dek">I work in CRM and customer data across the MENA and GCC region, in e-commerce, fintech and retail. This page covers a selection of that work: lifecycle journeys, customer models, measurement and campaign automation across email, push and SMS.</p>
-      <div class="byline"><span>By <b>Dev</b></span><span class="dot" aria-hidden="true"></span><span>7 min read</span></div>
+      <div class="byline"><span>By <b>Dev</b></span><span class="dot" aria-hidden="true"></span><span>4 min read</span></div>
 
       <nav class="glance" aria-label="Case studies at a glance">
         <div class="glance-title">What this page covers</div>
@@ -228,36 +228,36 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
         <section id="orchestration">
           <div class="eyebrow">01 · Journeys</div>
           <h2>Lifecycle journeys across email, push and SMS</h2>
-          <p class="dek">The rules and journeys that decide whether a customer hears from us, on which channel, and when we stop.</p>
+          <p class="dek">Automated journeys that respond to what customers do, across every channel.</p>
 
-          <div class="sub"><h3>The problem</h3><p>We sell across several GCC markets over three channels, and the campaign calendar kept getting busier. It was easy for one customer to get an email, a push and an SMS on the same day, sometimes about something they'd already bought. We were sending more every month, and engagement wasn't keeping up.</p></div>
-          <div class="sub"><h3>My role</h3><p>I designed the targeting, built the always-on journeys, and set up how they run alongside the campaign calendar.</p></div>
-          <div class="sub"><h3>The approach</h3><p>Messaging cadence, frequency capping and entry and exit rules make sure a customer isn't sent several messages at once, or reminded about something they've already bought. On top of the campaign calendar, a set of always-on journeys reacts to what customers do on the site and app, and we test them against holdout groups to see what they really add.</p></div>
+          <div class="sub"><h3>The problem</h3><p>With tailored campaigns running across multiple markets and channels, it was easy for customers to hear from the brand too often, sometimes about things they'd already bought. Send volume was growing faster than engagement.</p></div>
+          <div class="sub"><h3>My role</h3><p>I designed the targeting and built the always-on journeys that run alongside the campaign calendar.</p></div>
+          <div class="sub"><h3>The approach</h3><p>Messaging cadence, frequency capping and entry and exit rules keep customers from getting too many messages. The journeys react to what people do on the site and app, and each one is tested against a holdout group to see what it really adds.</p></div>
 
           <figure>
             <div class="panel" role="img" aria-label="Journey flow: trigger, entry rules, frequency and cadence, channel and timing, exit and measure, then back to entry">
               <ol class="flow">
-                <li><h3>Trigger</h3><ul><li>Cart or browse event</li><li>Purchase</li><li>Gone quiet</li><li>Calendar campaign</li></ul></li>
-                <li><h3>Entry rules</h3><ul><li>Opted in to the channel</li><li>Reachable device or address</li><li>Right market and country</li><li>Gender and brand fit</li></ul></li>
-                <li><h3>Frequency &amp; cadence</h3><ul><li>Capped messages per channel</li><li>Minimum gap between sends</li><li>Already in a higher-priority journey</li></ul></li>
-                <li><h3>Channel &amp; timing</h3><ul><li>Email, push or SMS</li><li>English or Arabic</li><li>Send window per market</li></ul></li>
-                <li><h3>Exit &amp; measure</h3><ul><li>Exit once they buy</li><li>Holdout group</li><li>Fixed credit window per channel</li></ul></li>
+                <li><h3>Trigger</h3><ul><li>Site or app activity</li><li>Purchase</li><li>Inactivity</li><li>Scheduled campaign</li></ul></li>
+                <li><h3>Entry rules</h3><ul><li>Channel opt-in</li><li>Market and audience fit</li></ul></li>
+                <li><h3>Frequency &amp; cadence</h3><ul><li>Frequency caps</li><li>Priority between journeys</li></ul></li>
+                <li><h3>Channel &amp; timing</h3><ul><li>Best channel</li><li>Language and send time</li></ul></li>
+                <li><h3>Exit &amp; measure</h3><ul><li>Exit on conversion</li><li>Holdout comparison</li></ul></li>
               </ol>
-              <div class="loop"><div class="loop-path" aria-hidden="true"></div><p>↺ What the customer does next updates their profile and scores, and feeds the next decision</p></div>
+              <div class="loop"><div class="loop-path" aria-hidden="true"></div><p>↺ What the customer does next feeds the next decision</p></div>
             </div>
-            <figcaption>Cadence, frequency capping and entry and exit rules keep any one customer from getting too many messages.</figcaption>
+            <figcaption>How a customer moves through an always-on journey.</figcaption>
           </figure>
 
-          <div class="result"><div class="eyebrow">Outcome</div><p>More than ten always-on journeys run by themselves across the customer lifecycle, in English and Arabic, and each one can be measured the way section 03 describes.</p></div>
+          <div class="result"><div class="eyebrow">Outcome</div><p>More than ten always-on journeys now run across the customer lifecycle, in English and Arabic, each measured against a holdout group.</p></div>
 
-          <div class="sub"><h3>The always-on journeys</h3><p>Each one starts when a customer does something, and stops as soon as they buy.</p></div>
+          <div class="sub"><h3>The always-on journeys</h3><p>Each one starts when a customer does something, and stops once they convert.</p></div>
           <ul class="journeys">
-            <li><span class="stage-name">New customer</span><h3>Onboarding</h3><p>New app users get a short series introducing the brand's services and the categories they're likely to shop, by market and gender.</p></li>
-            <li><span class="stage-name">Browsing</span><h3>Product to bag</h3><p>Someone looks at a product but doesn't add it. They get a reminder, then a second nudge if they still haven't acted, tailored to language and to whether they have an account.</p></li>
-            <li><span class="stage-name">Considering</span><h3>Wishlist to bag</h3><p>Items saved to a wishlist but never added to the bag bring the customer back to them.</p></li>
-            <li><span class="stage-name">Ready to buy</span><h3>Abandoned bag</h3><p>Items left in the bag trigger an email and a push, run separately for each market.</p></li>
-            <li><span class="stage-name">Brand building</span><h3>Awareness to first purchase</h3><p>For the retailer's own brands, customers move from an introduction to the brand to a nudge toward their first purchase.</p></li>
-            <li><span class="stage-name">Local moments</span><h3>Location and sale triggers</h3><p>Shoppers browsing in a city with fast delivery hear about it at that moment. During big sales, extra journeys move people from wishlist to bag and from bag to checkout.</p></li>
+            <li><span class="stage-name">New customer</span><h3>Onboarding</h3><p>A welcome series that introduces new customers to the brand and what they're likely to shop.</p></li>
+            <li><span class="stage-name">Browsing</span><h3>Product to bag</h3><p>Reminders for people who view a product but don't add it to the bag.</p></li>
+            <li><span class="stage-name">Considering</span><h3>Wishlist to bag</h3><p>Brings customers back to the items they saved.</p></li>
+            <li><span class="stage-name">Ready to buy</span><h3>Abandoned bag</h3><p>Email and push reminders for items left in the bag.</p></li>
+            <li><span class="stage-name">Brand building</span><h3>Awareness to first purchase</h3><p>Introduces own-label brands and nudges customers toward a first purchase.</p></li>
+            <li><span class="stage-name">Local moments</span><h3>Location and sale triggers</h3><p>Timely messages tied to where customers are and to major sale periods.</p></li>
           </ul>
 
           <div class="cta">
@@ -270,45 +270,44 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
         <section id="intelligence">
           <div class="eyebrow">02 · Models</div>
           <h2>Targeting, segmentation and customer models</h2>
-          <p>A few of the models I built that are in use today. The team relies on them every week to decide who we contact and what we show them.</p>
-          <div class="sub"><h3>Recommendation engine</h3><p>Works out which brands each customer is most likely to want next, and refreshes every week for each market. We use it for personalised product picks in campaigns and to find the right audience for a brand launch or drop. Buyers also use a lookup tool to see which brands share customers.</p></div>
-          <div class="sub"><h3>Channel engagement scores</h3><p>How likely each customer is to engage on email and on push. They tell us which channel to lead with and who should hear from us less. People who almost never open get held back, which keeps our sender reputation healthy as volume grows.</p></div>
-          <div class="sub"><h3>Customer segmentation &amp; VIP tiers</h3><p>Splits the base by value and by how people shop, with top clients picked out first. Each segment gets its own message and offer level. The same tiers drive private-sale invite lists and the clienteling list store teams use for their top 10% of clients.</p></div>
-          <div class="sub"><h3>Profile enrichment</h3><p>Fills in what customers haven't told us, like whether they shop womenswear or menswear. More people end up in a programme that fits them, rather than getting a generic message.</p></div>
+          <p>A few of the models I built. The team uses them every week to decide who to contact and what to show them.</p>
+          <div class="sub"><h3>Recommendation engine</h3><p>Predicts which brands each customer is likely to want next. Used for personalised picks in campaigns and to find the right audience for launches.</p></div>
+          <div class="sub"><h3>Channel engagement scores</h3><p>Scores how likely each customer is to engage on each channel, so we lead with the right one and contact less engaged customers less often.</p></div>
+          <div class="sub"><h3>Customer segmentation &amp; VIP tiers</h3><p>Groups customers by value and shopping behaviour, so each segment gets its own message and offer. The same tiers drive VIP and private-sale lists.</p></div>
+          <div class="sub"><h3>Profile enrichment</h3><p>Fills gaps in customer profiles, so more people get relevant messages instead of generic ones.</p></div>
         </section>
 
         <!-- 3 · Measurement -->
         <section id="measurement">
           <div class="eyebrow">03 · Measurement</div>
           <h2>Measuring incremental impact from CRM activities</h2>
-          <p>Opens and clicks tell you someone saw a message. They don't tell you whether it changed what they bought. The question I wanted every journey and campaign to answer was simpler: would these customers have bought anyway?</p>
-          <div class="sub"><h3>The challenge</h3><p>Our CRM platform reported engagement, not revenue. On top of that, email, push and SMS each took credit for the same orders using their own rules, so CRM looked bigger on paper than we could prove.</p></div>
-          <div class="sub"><h3>Control groups</h3><p>Journeys and campaigns are tested against a random holdout group of customers who don't get the message, and they stay in that group for as long as the test runs. The difference in conversion and revenue between the two groups is what the message is really worth.</p></div>
-          <div class="sub"><h3>Experiment design</h3><p>Before a test starts I write down what we expect to happen, the one metric that decides it, how long it runs, and what result would make us change course. Variants are split at random from the same audience and compared with the control group. Comparing with last month would mix in seasonality and sale periods.</p></div>
-          <div class="sub"><h3>Guardrails</h3><p>Messages are tied to real orders with one set of rules and a fixed window for each channel, and each order is counted once. A daily health check compares delivery, opens, clicks, bounces and unsubscribes with the recent trend. If something breaks we know the same day, and we can tell a jump in send volume apart from customers actually losing interest.</p></div>
-          <div class="result"><div class="eyebrow">What it changed</div><p>We now keep, change or switch off journeys based on what they add, rather than on clicks. One reminder journey that had run for a long time turned out to make no difference against its control group, so we moved that effort elsewhere. We also tightened attribution windows that were giving CRM too much credit. The numbers we report now hold up when finance and leadership look at them.</p></div>
+          <p>Opens and clicks show that someone saw a message, not whether it changed what they bought. The aim was to measure the revenue CRM actually adds.</p>
+          <div class="sub"><h3>The challenge</h3><p>Platform reporting focused on engagement rather than revenue, and each channel claimed credit for the same orders.</p></div>
+          <div class="sub"><h3>Control groups</h3><p>Journeys and campaigns are measured against random holdout groups. The difference between the two is the real impact.</p></div>
+          <div class="sub"><h3>Experiment design</h3><p>Each test starts with a clear hypothesis, one deciding metric and a fixed duration, so the results can be trusted and acted on.</p></div>
+          <div class="sub"><h3>Guardrails</h3><p>Consistent attribution rules across channels, with daily monitoring of delivery and engagement to catch problems early.</p></div>
+          <div class="result"><div class="eyebrow">What it changed</div><p>Journeys are now kept, changed or switched off based on the revenue they add, and the CRM numbers we report hold up with finance and leadership.</p></div>
         </section>
 
         <!-- 4 · Campaign operations -->
         <section id="operations">
           <div class="eyebrow">04 · Operations</div>
           <h2>Automating campaign production</h2>
-          <p>Several markets, three channels and two languages add up to a lot of manual work for every campaign. I automated most of it. The team now spends its time on ideas and content, and we can run more campaigns without adding people.</p>
-          <div class="sub"><h3>The challenge</h3><p>Each campaign used to be built by hand in the CRM tool, once per market, in English and in Arabic. Mistakes got through, like the wrong audience, a broken link or a product that had already sold out. Results were also tracked somewhere other than the plan.</p></div>
+          <p>Running campaigns across several markets, channels and languages meant a lot of manual work. I automated most of it, so the team can spend its time on ideas and content.</p>
+          <div class="sub"><h3>The challenge</h3><p>Campaigns were built by hand for each market and language, which was slow and let mistakes through.</p></div>
           <div class="sub"><h3>What's automated</h3>
             <ul class="ops">
-              <li><b>From plan to draft.</b> The campaign calendar is the starting point. Email and push drafts are created in the CRM tool straight from it, with copy, layout, audience and schedule already filled in.</li>
-              <li><b>Building the email.</b> Emails are put together from approved layouts, copy and product blocks, in both languages. Nobody hand-codes HTML.</li>
-              <li><b>Morning checks.</b> Each morning, every upcoming campaign is checked for missing copy, translations, layouts, audiences and links. Featured products are checked against live stock.</li>
-              <li><b>Test sends.</b> Proofs go to the right test list for each market and language.</li>
-              <li><b>Results.</b> Performance flows back into the calendar twice a day, next to what was planned.</li>
+              <li><b>Plan to draft.</b> Campaign drafts are created straight from the campaign calendar.</li>
+              <li><b>Email building.</b> Emails are assembled from approved templates and content, in both languages.</li>
+              <li><b>Daily checks.</b> Upcoming campaigns are checked for missing content, broken links and out-of-stock products.</li>
+              <li><b>Test sends.</b> Proofs go to the right test lists automatically.</li>
+              <li><b>Reporting.</b> Results flow back into the campaign calendar.</li>
             </ul>
           </div>
-          <div class="sub"><h3>Built-in safety</h3><p>The automation prepares and checks, and a person still approves and sends. Changes run as a dry run first, and the tooling has its own tests, so it's safe to keep building on.</p></div>
-          <div class="result"><div class="eyebrow">What it changed</div><p>We run more campaigns a week with the same team, fewer mistakes reach customers, and getting from an idea to a send takes far less time. Every campaign goes through the same checks, whoever built it.</p></div>
-          <div class="sub"><h3>What's next</h3><p>I'm working on AI-assisted copy that drafts variations in the brand's tone of voice, based on past campaigns that did well. The aim is for every campaign to test its copy.</p></div>
+          <div class="sub"><h3>Built-in safety</h3><p>The automation prepares and checks. A person still approves and sends.</p></div>
+          <div class="result"><div class="eyebrow">What it changed</div><p>More campaigns with the same team, fewer errors, and a much shorter path from idea to send.</p></div>
+          <div class="sub"><h3>What's next</h3><p>AI-assisted copy that drafts on-brand variations, so every campaign can test its messaging.</p></div>
         </section>
-
 
         <section id="toolkit">
           <h2>Toolkit</h2>
