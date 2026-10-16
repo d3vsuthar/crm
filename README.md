@@ -1,6 +1,6 @@
 # CRM portfolio pages
 
-Two static pages with no build step, styled as a Think with Google–style article (Google Sans, sticky table of contents on the left). Fonts load from Google Fonts. Everything else is inline.
+Two static pages with no build step, styled as a long-read article (Google Sans, teal accent, sticky table of contents on the left). Fonts load from Google Fonts. Everything else is inline.
 
 Live at https://d3vsuthar.github.io/crm-port/
 

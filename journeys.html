@@ -13,11 +13,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500;700&family=Google+Sans+Code:wght@400;500;600&display=swap">
 <style>
-/* Layout: matches the portfolio article. Sticky contents rail on the left, one card per journey drawn like a flow-builder canvas */
+/* Layout: matches the portfolio article. Sticky contents rail on the left, one hairline-bordered frame per journey drawn like a flow-builder canvas */
 :root {
   --paper: #ffffff; --bg: #ffffff; --surface: #ffffff; --panel: #f8f9fa; --canvas: #f1f3f4; --ink: #202124; --text: #3c4043; --muted: #5f6368; --line: #dadce0;
-  --edge: #80868b; --accent: #1a73e8; --accent-strong: #174ea6; --accent-soft: #e8f0fe; --on-accent: #ffffff;
-  --email: #188038; --email-soft: #e6f4ea; --split: #b06000; --split-soft: #fef7e0; --store: #9334e6; --store-soft: #f3e8fd;
+  --edge: #80868b; --accent: #0f766e; --accent-strong: #115e59; --accent-soft: #e7f3f1; --on-accent: #ffffff;
+  --email: #4f46e5; --email-soft: #eef0ff; --split: #b06000; --split-soft: #fef7e0; --store: #be185d; --store-soft: #fce7f3;
   --display: "Google Sans", "Google Sans Text", Roboto, Arial, sans-serif;
   --body: "Google Sans Text", "Google Sans", Roboto, Arial, sans-serif;
   --mono: "Google Sans Code", ui-monospace, Menlo, monospace;
@@ -25,12 +25,12 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --paper: #1f1f1f; --bg: #1f1f1f; --surface: #28292c; --panel: #202124; --canvas: #1a1a1b; --ink: #e8eaed; --text: #c4c7c5; --muted: #9aa0a6; --line: #3c4043;
-  --edge: #80868b; --accent: #8ab4f8; --accent-strong: #aecbfa; --accent-soft: #263346; --on-accent: #202124;
-  --email: #81c995; --email-soft: #1e3a2a; --split: #fdd663; --split-soft: #3d3418; --store: #d7aefb; --store-soft: #352a45; color-scheme: dark } }
+  --edge: #80868b; --accent: #5fd4c4; --accent-strong: #8ee3d7; --accent-soft: #19322f; --on-accent: #0c1f1d;
+  --email: #a5b4fc; --email-soft: #262a4a; --split: #fdd663; --split-soft: #3d3418; --store: #f9a8d4; --store-soft: #3d1f2e; color-scheme: dark } }
 :root[data-theme="dark"] {
   --paper: #1f1f1f; --bg: #1f1f1f; --surface: #28292c; --panel: #202124; --canvas: #1a1a1b; --ink: #e8eaed; --text: #c4c7c5; --muted: #9aa0a6; --line: #3c4043;
-  --edge: #80868b; --accent: #8ab4f8; --accent-strong: #aecbfa; --accent-soft: #263346; --on-accent: #202124;
-  --email: #81c995; --email-soft: #1e3a2a; --split: #fdd663; --split-soft: #3d3418; --store: #d7aefb; --store-soft: #352a45; color-scheme: dark }
+  --edge: #80868b; --accent: #5fd4c4; --accent-strong: #8ee3d7; --accent-soft: #19322f; --on-accent: #0c1f1d;
+  --email: #a5b4fc; --email-soft: #262a4a; --split: #fdd663; --split-soft: #3d3418; --store: #f9a8d4; --store-soft: #3d1f2e; color-scheme: dark }
 
 *, *::before, *::after { box-sizing: border-box; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
@@ -44,14 +44,15 @@ a { color: var(--accent); text-underline-offset: 3px; }
 
 .bar { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
 .bar .wrap { height: var(--bar-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font: 500 1.05rem var(--display); min-width: 0; }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--ink); font: 500 1.05rem var(--display); min-width: 0; }
 .brand .crumb { color: var(--muted); font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; background: var(--accent); color: var(--on-accent); font: 500 0.9rem var(--display); }
+.wordmark { font: 700 1.3rem/1 var(--display); letter-spacing: -0.03em; color: var(--ink); }
+.wordmark i { font-style: normal; color: var(--accent); }
 .bar nav { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.bar nav a { font: 500 0.92rem var(--display); text-decoration: none; color: var(--muted); padding: 8px 12px; border-radius: 999px; }
+.bar nav a { font: 500 0.92rem var(--display); text-decoration: none; color: var(--muted); padding: 8px 12px; border-radius: 6px; }
 .bar nav a:hover { background: var(--panel); color: var(--ink); }
-.bar nav .btn { border: 1px solid var(--line); color: var(--accent); padding: 8px 18px; }
-.bar nav .btn:hover { background: var(--accent-soft); }
+.bar nav .btn { border: 1px solid var(--line); color: var(--ink); padding: 7px 16px; }
+.bar nav .btn:hover { background: var(--bg); border-color: var(--accent); color: var(--accent); }
 @media (max-width: 560px) { .bar nav .hide-sm, .brand .crumb { display: none; } }
 
 .hero { padding-block: 48px 36px; display: grid; gap: 18px; }
@@ -73,7 +74,7 @@ h2 { font-size: 1.4rem; line-height: 1.3; font-weight: 500; }
 @media (max-width: 960px) {
   .layout { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 0; }
   .toc-rail { position: static; padding-top: 0; }
-  .toc { border: 1px solid var(--line); border-radius: 16px; padding: 4px 18px; }
+  .toc { border: 1px solid var(--line); border-radius: 6px; padding: 4px 18px; }
   .toc summary { padding-block: 14px; cursor: pointer; display: flex; justify-content: space-between; }
   .toc summary::after { content: "+"; font-size: 1.2rem; line-height: 1; }
   .toc[open] summary::after { content: "–"; }
@@ -81,15 +82,15 @@ h2 { font-size: 1.4rem; line-height: 1.3; font-weight: 500; }
 }
 
 #frames { display: grid; gap: 32px; padding-top: 32px; min-width: 0; }
-.frame { background: var(--panel); border-radius: 20px; padding: clamp(16px, 3vw, 24px); display: grid; gap: 16px; min-width: 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
+.frame { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: clamp(16px, 3vw, 24px); display: grid; gap: 16px; min-width: 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
 .frame-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 24px; }
 .frame-head > div:first-child { display: grid; gap: 4px; min-width: 0; }
 .frame-head p { color: var(--muted); font-size: 0.95rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { font: 500 0.8rem/1 var(--display); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); line-height: 1.3; max-width: 100%; }
+.chip { font: 500 0.8rem/1 var(--display); padding: 7px 11px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); background: var(--surface); line-height: 1.3; max-width: 100%; }
 .chip.goal { border-color: transparent; background: var(--accent-soft); color: var(--accent); }
 .chip.blue { border-color: transparent; background: var(--accent); color: var(--on-accent); }
-.canvas { min-width: 0; overflow-x: auto; background: var(--canvas); border-radius: 14px;
+.canvas { min-width: 0; overflow-x: auto; background: var(--canvas); border-radius: 6px;
   background-image: radial-gradient(var(--line) 1px, transparent 1px); background-size: 18px 18px; }
 .canvas svg { display: block; margin: 0 auto; width: 100%; height: auto; min-width: 760px; }
 .foot { font-size: 0.9rem; color: var(--muted); }
@@ -166,7 +167,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
 
 <header class="bar gutter">
   <div class="wrap">
-    <a class="brand" href="https://devsuthar.co.in"><span class="avatar" aria-hidden="true">D</span>Dev <span class="crumb">/ CRM work / Journey maps</span></a>
+    <a class="brand" href="https://devsuthar.co.in"><span class="wordmark">Dev<i>.</i></span><span class="crumb">/ CRM work / Journey maps</span></a>
     <nav aria-label="Site">
       <a class="hide-sm" href="index.html">Case study</a>
       <a class="hide-sm" href="https://devsuthar.co.in">devsuthar.co.in</a>
