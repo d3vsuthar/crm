@@ -115,29 +115,6 @@ h3 { font-size: 1.25rem; line-height: 1.35; font-weight: 500; }
 .result p { font: 400 clamp(1.2rem, 2.4vw, 1.4rem)/1.5 var(--display); color: var(--ink); letter-spacing: -0.005em; }
 .result .eyebrow { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
-/* figure panels */
-figure { margin: 12px 0 0; display: grid; gap: 12px; }
-figcaption { font: 0.88rem/1.5 var(--display); color: var(--muted); }
-.panel { border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px 20px; }
-.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); counter-reset: s; }
-.flow > li { position: relative; padding-right: 16px; display: grid; gap: 10px; align-content: start; counter-increment: s; }
-.flow > li::before { content: counter(s); position: relative; z-index: 1; width: 28px; height: 28px; border-radius: 6px; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font: 500 0.85rem var(--display); }
-.flow > li:not(:last-child)::after { content: ""; position: absolute; top: 13px; left: 36px; right: 8px; height: 2px; background: var(--line); }
-.flow h3 { font-size: 1rem; margin-top: 4px; }
-.flow ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font: 0.86rem/1.4 var(--body); color: var(--muted); }
-.loop-path { position: relative; height: 26px; margin: 18px calc(20% - 14px) 0 calc(20% + 13px); border: 2px solid var(--accent); border-top: 0; border-radius: 0 0 10px 10px; opacity: 0.55; }
-.loop-path::before { content: ""; position: absolute; top: -8px; left: -6px; border: 5px solid transparent; border-top: 0; border-bottom: 8px solid var(--accent); }
-.loop p { margin-top: 10px; text-align: center; font: 500 0.88rem/1.5 var(--display); color: var(--accent); }
-@media (max-width: 720px) {
-  .flow { grid-template-columns: 1fr; }
-  .flow > li { grid-template-columns: 28px 1fr; column-gap: 14px; row-gap: 6px; padding: 0 0 22px; }
-  .flow > li > * { grid-column: 2; }
-  .flow > li::before { grid-row: 1 / span 2; align-self: start; }
-  .flow > li:not(:last-child)::after { top: 32px; bottom: 4px; left: 13px; right: auto; width: 2px; height: auto; }
-  .loop-path { display: none; }
-  .loop p { text-align: left; margin-top: 0; }
-}
-
 .journeys { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .journeys li { border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .journeys .stage-name { font: 500 0.8rem var(--display); color: var(--accent); }
@@ -230,25 +207,12 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
           <h2>Lifecycle journeys across email, push and SMS</h2>
           <p class="dek">Automated journeys triggered by customer behaviour.</p>
 
-          <div class="sub"><h3>The problem</h3><p>Tailored campaigns ran across multiple markets and channels, and customers were getting too many messages. Engagement wasn't keeping up with send volume.</p></div>
-          <div class="sub"><h3>My role</h3><p>I designed the targeting and built the always-on journeys that run alongside the campaign calendar.</p></div>
-          <div class="sub"><h3>The approach</h3><p>Cadence, frequency caps and entry and exit rules limit how many messages each customer gets. Journeys are triggered by site and app behaviour and tested against holdout groups.</p></div>
+          <div class="sub"><h3>The approach</h3><p>I designed the targeting and built the always-on journeys that run alongside the campaign calendar. Journeys are triggered by site and app behaviour and tested against holdout groups.</p></div>
 
-          <figure>
-            <div class="panel" role="img" aria-label="Journey flow: trigger, entry rules, frequency and cadence, channel and timing, exit and measure, then back to entry">
-              <ol class="flow">
-                <li><h3>Trigger</h3><ul><li>Site or app activity</li><li>Purchase</li><li>Inactivity</li><li>Scheduled campaign</li></ul></li>
-                <li><h3>Entry rules</h3><ul><li>Channel opt-in</li><li>Market and audience fit</li></ul></li>
-                <li><h3>Frequency &amp; cadence</h3><ul><li>Frequency caps</li><li>Priority between journeys</li></ul></li>
-                <li><h3>Channel &amp; timing</h3><ul><li>Best channel</li><li>Language and send time</li></ul></li>
-                <li><h3>Exit &amp; measure</h3><ul><li>Exit on conversion</li><li>Holdout comparison</li></ul></li>
-              </ol>
-              <div class="loop"><div class="loop-path" aria-hidden="true"></div><p>↺ Customer behaviour feeds back into the next decision</p></div>
-            </div>
-            <figcaption>How a customer moves through an always-on journey.</figcaption>
-          </figure>
-
-          <div class="result"><div class="eyebrow">Outcome</div><p>Over ten always-on journeys across the customer lifecycle, in multiple languages, each tested against a holdout group.</p></div>
+          <div class="cta">
+            <div><span class="eyebrow">See it mapped out</span><b>One customer lifecycle, start to finish</b><p>From first visit to repeat purchase.</p></div>
+            <a class="btn primary" href="journeys.html#capstone">View journey maps →</a>
+          </div>
 
           <div class="sub"><h3>The always-on journeys</h3><p>Each journey starts with a customer action and ends when they convert.</p></div>
           <ul class="journeys">
@@ -259,11 +223,6 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
             <li><span class="stage-name">Brand building</span><h3>Awareness to first purchase</h3><p>Introduces own-label brands to new customers.</p></li>
             <li><span class="stage-name">Local moments</span><h3>Location and sale triggers</h3><p>Messages triggered by location and by major sale periods.</p></li>
           </ul>
-
-          <div class="cta">
-            <div><span class="eyebrow">See it mapped out</span><b>One customer lifecycle, start to finish</b><p>From first visit to repeat purchase.</p></div>
-            <a class="btn primary" href="journeys.html#capstone">View journey maps →</a>
-          </div>
         </section>
 
         <!-- 2 · Predictive -->
