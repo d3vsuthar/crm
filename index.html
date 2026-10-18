@@ -157,7 +157,7 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
     <div class="hero" id="top">
       <div class="eyebrow">Case study · CRM &amp; customer data</div>
       <h1>Selected CRM and customer data work</h1>
-      <p class="dek">From early-stage start-ups to established businesses, I build the CRM and growth systems that let them grow without adding headcount. My work spans e-commerce, fintech and retail across MENA and the GCC. This page covers a selection of that work: lifecycle journeys, customer models, measurement and campaign automation across multiple channels.</p>
+      <p class="dek">From early-stage start-ups to established businesses, I build the CRM and growth systems that let them grow without adding headcount. My work spans e-commerce, fintech and retail across MENA and the GCC. This page covers a selection of that work: customer models, lifecycle journeys, campaign automation and measurement across multiple channels.</p>
       <div class="byline"><span>By <b>Dev</b></span><span class="dot" aria-hidden="true"></span><span>3 min read</span></div>
 
       <nav class="glance" aria-label="Case studies at a glance">
@@ -176,10 +176,10 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
         <details class="toc" id="toc">
           <summary>On this page</summary>
           <ol>
-            <li><a href="#orchestration">Lifecycle journeys</a></li>
             <li><a href="#intelligence">Customer models</a></li>
-            <li><a href="#measurement">Measuring incremental impact</a></li>
+            <li><a href="#orchestration">Lifecycle journeys</a></li>
             <li><a href="#operations">Automating campaign production</a></li>
+            <li><a href="#measurement">Measuring incremental impact</a></li>
             <li><a href="#toolkit">Toolkit</a></li>
           </ol>
         </details>
@@ -187,9 +187,20 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
 
       <article>
 
-        <!-- 1 · Orchestration (lead) -->
+        <!-- 1 · Predictive -->
+        <section id="intelligence">
+          <div class="eyebrow">01 · Models</div>
+          <h2>Targeting, segmentation and customer models</h2>
+          <p>Predictive models I've built and deployed in production. They power targeting and personalisation in live campaigns every week.</p>
+          <div class="sub"><h3>Recommendation engine</h3><p>Predicts which brands a customer is likely to buy next. Used for product recommendations in campaigns and for launch audiences.</p></div>
+          <div class="sub"><h3>Channel engagement scores</h3><p>Predicts how likely each customer is to engage on email and push. Used to pick the lead channel and to reduce sends to low-engagement customers, which protects deliverability.</p></div>
+          <div class="sub"><h3>Customer segmentation &amp; VIP tiers</h3><p>Segments customers by value and shopping behaviour, with different messaging and offers per segment. Also used for VIP and private-sale lists.</p></div>
+          <div class="sub"><h3>Profile enrichment</h3><p>Predicts missing profile attributes, which reduces the number of customers who get generic messages.</p></div>
+        </section>
+
+        <!-- 2 · Orchestration -->
         <section id="orchestration">
-          <div class="eyebrow">01 · Journeys</div>
+          <div class="eyebrow">02 · Journeys</div>
           <h2>Lifecycle journeys across multiple channels</h2>
           <p class="dek">Automated journeys triggered by customer behaviour.</p>
 
@@ -211,29 +222,9 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
           </ul>
         </section>
 
-        <!-- 2 · Predictive -->
-        <section id="intelligence">
-          <div class="eyebrow">02 · Models</div>
-          <h2>Targeting, segmentation and customer models</h2>
-          <p>Predictive models I've built and deployed in production. They power targeting and personalisation in live campaigns every week.</p>
-          <div class="sub"><h3>Recommendation engine</h3><p>Predicts which brands a customer is likely to buy next. Used for product recommendations in campaigns and for launch audiences.</p></div>
-          <div class="sub"><h3>Channel engagement scores</h3><p>Predicts how likely each customer is to engage on email and push. Used to pick the lead channel and to reduce sends to low-engagement customers, which protects deliverability.</p></div>
-          <div class="sub"><h3>Customer segmentation &amp; VIP tiers</h3><p>Segments customers by value and shopping behaviour, with different messaging and offers per segment. Also used for VIP and private-sale lists.</p></div>
-          <div class="sub"><h3>Profile enrichment</h3><p>Predicts missing profile attributes, which reduces the number of customers who get generic messages.</p></div>
-        </section>
-
-        <!-- 3 · Measurement -->
-        <section id="measurement">
-          <div class="eyebrow">03 · Measurement</div>
-          <h2>Measuring incremental impact from CRM activities</h2>
-          <p>Opens and clicks measure engagement, not revenue, and each platform took credit for the same orders. That made it hard to tell how much revenue CRM drove. This work measures the incremental revenue from CRM.</p>
-          <div class="sub"><h3>Control groups</h3><p>Journeys and campaigns are compared against random holdout groups.</p></div>
-          <div class="sub"><h3>Experiment design</h3><p>Each test has a hypothesis, a primary metric and a fixed duration, agreed before launch.</p></div>
-        </section>
-
-        <!-- 4 · Campaign operations -->
+        <!-- 3 · Campaign operations -->
         <section id="operations">
-          <div class="eyebrow">04 · Operations</div>
+          <div class="eyebrow">03 · Operations</div>
           <h2>Automating campaign production</h2>
           <p>Campaigns across multiple markets, channels and languages took a lot of manual work. Each one was built by hand for every market and language, which was slow and error-prone.</p>
           <div class="sub"><h3>What's automated</h3>
@@ -246,6 +237,15 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
             </ul>
           </div>
           <div class="sub"><h3>Built-in safety</h3><p>Automation prepares and checks campaigns. A person approves and sends.</p></div>
+        </section>
+
+        <!-- 4 · Measurement -->
+        <section id="measurement">
+          <div class="eyebrow">04 · Measurement</div>
+          <h2>Measuring incremental impact from CRM activities</h2>
+          <p>Opens and clicks measure engagement, not revenue, and each platform took credit for the same orders. That made it hard to tell how much revenue CRM drove. This work measures the incremental revenue from CRM.</p>
+          <div class="sub"><h3>Control groups</h3><p>Journeys and campaigns are compared against random holdout groups.</p></div>
+          <div class="sub"><h3>Experiment design</h3><p>Each test has a hypothesis, a primary metric and a fixed duration, agreed before launch.</p></div>
         </section>
 
         <section id="toolkit">
