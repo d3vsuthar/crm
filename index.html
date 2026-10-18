@@ -109,12 +109,6 @@ h3 { font-size: 1.25rem; line-height: 1.35; font-weight: 500; }
 .sub { display: grid; gap: 10px; margin-top: 12px; }
 .intro p + p { margin-top: 16px; }
 
-/* result callout */
-.result { border-top: 1px solid var(--line); padding: 22px 0 6px; display: grid; gap: 10px; margin-top: 16px; position: relative; }
-.result::before { content: ""; position: absolute; top: -1px; left: 0; width: 48px; height: 2px; background: var(--accent); }
-.result p { font: 400 clamp(1.2rem, 2.4vw, 1.4rem)/1.5 var(--display); color: var(--ink); letter-spacing: -0.005em; }
-.result .eyebrow { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
-
 .journeys { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .journeys li { border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
 .journeys .stage-name { font: 500 0.8rem var(--display); color: var(--accent); }
@@ -245,15 +239,13 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
           <div class="sub"><h3>Control groups</h3><p>Journeys and campaigns are compared against random holdout groups.</p></div>
           <div class="sub"><h3>Experiment design</h3><p>Each test has a hypothesis, a primary metric and a fixed duration, agreed before launch.</p></div>
           <div class="sub"><h3>Guardrails</h3><p>One attribution model across channels, and daily monitoring of delivery and engagement.</p></div>
-          <div class="result"><div class="eyebrow">What it changed</div><p>Journeys are kept, changed or switched off based on incremental revenue. CRM reporting is now accepted by finance and leadership.</p></div>
         </section>
 
         <!-- 4 · Campaign operations -->
         <section id="operations">
           <div class="eyebrow">04 · Operations</div>
           <h2>Automating campaign production</h2>
-          <p>Campaigns across multiple markets, channels and languages took a lot of manual work. I automated most of it.</p>
-          <div class="sub"><h3>The challenge</h3><p>Each campaign was built by hand for every market and language. It was slow and error-prone.</p></div>
+          <p>Campaigns across multiple markets, channels and languages took a lot of manual work. Each one was built by hand for every market and language, which was slow and error-prone.</p>
           <div class="sub"><h3>What's automated</h3>
             <ul class="ops">
               <li><b>Plan to draft.</b> Drafts are created from the campaign calendar.</li>
@@ -264,7 +256,6 @@ footer .links { display: flex; flex-wrap: wrap; gap: 20px; }
             </ul>
           </div>
           <div class="sub"><h3>Built-in safety</h3><p>Automation prepares and checks campaigns. A person approves and sends.</p></div>
-          <div class="result"><div class="eyebrow">What it changed</div><p>More campaigns with the same team, fewer errors and faster turnaround.</p></div>
         </section>
 
         <section id="toolkit">
