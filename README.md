@@ -2,7 +2,7 @@
 
 Two static pages with no build step, styled as a long-read article (Google Sans, teal accent, sticky table of contents on the left). Fonts load from Google Fonts. Everything else is inline.
 
-Live at https://d3vsuthar.github.io/crm-port/
+Live at https://d3vsuthar.github.io/crm/
 
 - `index.html`: Selected CRM work, the main page
 - `journeys.html`: Journey maps, including the lifecycle blueprint (linked from index)
